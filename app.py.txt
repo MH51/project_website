@@ -1,0 +1,24 @@
+from flask import Flask, Response, stream_with_context
+import io
+import base64
+import time
+
+app = Flask(__name__)
+
+@app.route('/video_stream')
+def video_stream():
+    while True:
+        # Capture video frames from ESP32 and save them in a buffer
+        capture_frame = # Your code to capture video frames from ESP32
+
+        # Encode the frame as JPEG and convert it to base64
+        jpeg_image = base64.b64encode(capture_frame)
+
+        # Create a response with the encoded image
+        response = Response(
+            io.BytesIO(jpeg_image),
+            mimetype='multipart/x-mixed-replace; boundary=--boundary',
+        )
+        response.headers['Cache-Control'] = 'no-cache'
+
+        yield response

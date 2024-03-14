@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: #000;
+    margin: 0 10px;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center no-repeat;
+    background-size: cover;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.features {
+    padding: 100px 50px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.feature i {
+    font-size: 50px;
+    color: #008000;
+    margin-right: 20px;
+}
+
+.features h2, .pricing h2, .testimonials h2, .contact h2 {
+    font-size: 36px;
+    margin: 50px 0 20px 0;
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.plan h3, .testimonial h4 {
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+}
+
+.plan p, .testimonial p {
+    font-size: 20px;
+    margin: 10px 0 20px 0;
+}
+
+.plan ul, .testimonial ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.plan ul li, .testimonial ul li {
+    margin-bottom: 10px;
+}
+
+.plan .btn, .testimonial .btn {
+    margin-top: 20px;
+}
+
+.testimonials {
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+marquee{
+    color:aquamarine;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
