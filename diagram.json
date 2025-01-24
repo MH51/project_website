@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 25.65,
+      "left": 3.6,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -86.1,
+      "left": -91.8,
+      "attrs": { "temperature": "-40", "humidity": "80.5" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 118.34,
+      "left": 345.83,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -131.2,
+      "left": -28,
+      "attrs": {}
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -44, "left": -208.98, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -3.6,
+      "left": -274.6,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -126.8, "left": 268.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "dht1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "dht1:SDA", "pico:GP0", "green", [ "v0" ] ],
+    [ "dht1:GND", "pico:GND.1", "black", [ "v0" ] ],
+    [ "oled1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "oled1:SCL", "pico:GP17", "magenta", [ "v-57.6", "h-210.9", "v144" ] ],
+    [ "oled1:SDA", "pico:GP16", "green", [ "v-28.8", "h-211.13", "v124.8" ] ],
+    [ "oled1:GND", "pico:GND.6", "black", [ "v-38.4", "h-201.6", "v67.2" ] ],
+    [ "ldr1:VCC", "pico:3V3", "red", [ "h28.8", "v163.2" ] ],
+    [ "pico:GP15", "ldr1:DO", "yellow", [ "v9.6", "h144", "v-325.8" ] ],
+    [ "pico:GP26", "ldr1:AO", "green", [ "h68.4", "v-210.5" ] ],
+    [ "ldr1:GND", "pico:GND.6", "black", [ "h19.2", "v249.2", "h-87.6" ] ],
+    [ "pir1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pir1:GND", "pico:GND.1", "black", [ "v0" ] ],
+    [ "pir1:OUT", "pico:GP2", "green", [ "v0" ] ],
+    [ "led1:C", "pico:GND.1", "black", [ "v19.2", "h269.2" ] ],
+    [ "led1:A", "pico:GP4", "green", [ "v0" ] ],
+    [ "servo1:GND", "pico:GND.8", "black", [ "h-76.8", "v115.2" ] ],
+    [ "servo1:V+", "pico:3V3", "red", [ "h-67.2", "v124.9" ] ],
+    [ "servo1:PWM", "pico:GP20", "cyan", [ "h-57.6", "v211.4" ] ]
+  ],
+  "dependencies": {}
+}
